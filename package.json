@@ -1,14 +1,10 @@
 {
   "scripts": {
-    "dev": "nest start --watch",
-    "start": "node dist/main",
-    "start:dev": "nest start --watch",
-    "start:debug": "nest start --debug --watch",
-    "build": "nest build",
-    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
-    "test": "jest --passWithNoTests",
-    "test:watch": "jest --watch",
-    "test:cov": "jest --coverage"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext ts,tsx",
+    "type-check": "tsc --noEmit"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -29,6 +25,7 @@
     "passWithNoTests": true
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
     "@nestjs/bull": "^11.0.4",
     "@nestjs/bullmq": "^11.0.4",
     "@nestjs/common": "^11.1.17",
@@ -39,20 +36,29 @@
     "@nestjs/platform-express": "^11.1.17",
     "@nestjs/throttler": "^6.5.0",
     "@nestjs/typeorm": "^11.0.0",
+    "@tanstack/react-query": "^5.95.2",
     "axios": "^1.13.6",
     "bcrypt": "^6.0.0",
     "bullmq": "^5.71.0",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.15.1",
+    "clsx": "^2.1.1",
     "cookie-parser": "^1.4.7",
     "ioredis": "^5.10.1",
     "joi": "^18.1.1",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
     "pg": "^8.20.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-hook-form": "^7.72.0",
+    "react-hot-toast": "^2.6.0",
+    "react-router-dom": "^7.13.2",
     "rxjs": "^7.8.2",
+    "tailwind-merge": "^3.5.0",
     "typeorm": "^0.3.28",
     "uuid": "^13.0.0",
+    "zod": "^4.3.6",
     "zustand": "^5.0.12"
   },
   "devDependencies": {
@@ -60,9 +66,16 @@
     "@types/bcrypt": "^6.0.0",
     "@types/cookie-parser": "^1.4.10",
     "@types/passport-jwt": "^4.0.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "@types/uuid": "^10.0.0",
+    "@vitejs/plugin-react": "^6.0.1",
+    "autoprefixer": "^10.4.27",
     "eslint": "^9.39.4",
     "jest": "^29.7.0",
-    "typescript": "^6.0.2"
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.2"
   }
 }
